@@ -1,0 +1,15 @@
+{
+  "name": "adventofcode2015",
+  "version": "0.5.0",
+  "description": "Advent of Code 2015 in Javascript",
+  "main": "adventofcode.js",
+  "dependencies": {
+    "async": "^1.5.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "sirzerator",
+  "license": "ISC"
+}
