@@ -4,8 +4,8 @@ var lib = require('../lib.js');
 var main = lib.main(2, exports);
 
 exports.solve = function(input, display) {
-	var total_area = 0;
-	var total_ribbon = 0;
+	var totalArea = 0;
+	var totalRibbon = 0;
 
 	var lines = input.split('\n');
 	for (var line of lines) {
@@ -15,13 +15,13 @@ exports.solve = function(input, display) {
 
 		var l = dims[0], w = dims[1], h = dims[2];
 
-		total_area += computeArea(l, w, h);
-		total_ribbon += computeRibbon(l, w, h);
+		totalArea += computeArea(l, w, h);
+		totalRibbon += computeRibbon(l, w, h);
 	}
 
 	display([
-		'Area of wrapping paper required : ' + total_area + '.',
-		'Length of ribbon required : ' + total_ribbon + '.'
+		'Area of wrapping paper required : ' + totalArea + '.',
+		'Length of ribbon required : ' + totalRibbon + '.'
 	]);
 }
 

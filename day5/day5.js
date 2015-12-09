@@ -4,17 +4,17 @@ var lib = require('../lib.js');
 var main = lib.main(5, exports);
 
 exports.solve = function(input, display) {
-	var nice_words = 0, nice_words_new_criteria = 0;
+	var niceWords = 0, niceWordsNewCriteria = 0;
 	var words = input.split('\n');
 
 	for (var word of words) {
-		nice_words += firstCriteria(word) ? 1 : 0;
-		nice_words_new_criteria += newCriteria(word) ? 1 : 0;
+		niceWords += firstCriteria(word) ? 1 : 0;
+		niceWordsNewCriteria += newCriteria(word) ? 1 : 0;
 	}
 
 	display([
-		'There are ' + nice_words + ' nice words in the list.',
-		'But there are ' + nice_words_new_criteria + ' nice words in the list with the new criteria.',
+		'There are ' + niceWords + ' nice words in the list.',
+		'But there are ' + niceWordsNewCriteria + ' nice words in the list with the new criteria.',
 	]);
 }
 

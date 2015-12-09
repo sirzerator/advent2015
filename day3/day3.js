@@ -5,51 +5,51 @@ var main = lib.main(3, exports);
 
 exports.solve = function(input, display) {
 	var steps = input.split('');
-	var lone_santa = followPathAlone(steps);
-	var santa_and_robot = followPathWithRobot(steps);
+	var loneSanta = followPathAlone(steps);
+	var santaAndRobot = followPathWithRobot(steps);
 
 	display([
-		'Santa visits ' + lone_santa + ' houses.',
-		'Santa, with the help of his robot, visits ' + santa_and_robot + ' houses.'
+		'Santa visits ' + loneSanta + ' houses.',
+		'Santa, with the help of his robot, visits ' + santaAndRobot + ' houses.'
 	]);
 }
 
 function followPathAlone(steps) {
-	var houses_visited = 0,
-	    visited_houses = {},
+	var housesVisited = 0,
+	    visitedHouses = {},
 	    pos = {
 	    	x: 0,
 	    	y: 0
 	    };
 
 	for (var step of steps) {
-		houses_visited += visitHouse(step, pos, visited_houses);
+		housesVisited += visitHouse(step, pos, visitedHouses);
 	}
 
-	return houses_visited;
+	return housesVisited;
 }
 
 function followPathWithRobot(steps) {
-	var houses_visited = 0,
-	    visited_houses = {},
-	    robot_pos = {
+	var housesVisited = 0,
+	    visitedHouses = {},
+	    robotPos = {
 	    	x: 0,
 	    	y: 0
 	    },
-	    santa_pos = {
+	    santaPos = {
 	    	x: 0,
 	    	y: 0
 	    };
 
 	for (var i = 0, len = steps.length; i < (len - 1); i += 2) {
-		houses_visited += visitHouse(steps[i], santa_pos, visited_houses);
-		houses_visited += visitHouse(steps[i+1], robot_pos, visited_houses);
+		housesVisited += visitHouse(steps[i], santaPos, visitedHouses);
+		housesVisited += visitHouse(steps[i+1], robotPos, visitedHouses);
 	}
 
-	return houses_visited;
+	return housesVisited;
 }
 
-function visitHouse(step, pos, visited_houses) {
+function visitHouse(step, pos, visitedHouses) {
 	switch (step) {
 	case '>':
 		pos.x += 1;
@@ -67,8 +67,8 @@ function visitHouse(step, pos, visited_houses) {
 		break;
 	}
 
-	if (!visited_houses[pos.x + 'x' + pos.y]) {
-		visited_houses[pos.x + 'x' + pos.y] = true;
+	if (!visitedHouses[pos.x + 'x' + pos.y]) {
+		visitedHouses[pos.x + 'x' + pos.y] = true;
 		return 1;
 	}
 
