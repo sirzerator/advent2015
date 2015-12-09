@@ -1,15 +1,7 @@
 var exports = module.exports = {};
 var lib = require('../lib.js');
 
-function main() {
-	if (process.argv.length > 2) {
-		exports.solve(process.argv[2], lib.display);
-	} else {
-		lib.getInputForDay(1, function(input) {
-			exports.solve(input, lib.display);
-		});
-	}
-}
+var main = lib.main(1, exports);
 
 exports.solve = function(input, display) {
 	var output = [];

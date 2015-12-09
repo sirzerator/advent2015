@@ -2,15 +2,7 @@ var exports = module.exports = {};
 var lib = require('../lib.js');
 var crypto = require('crypto');
 
-function main() {
-	if (process.argv.length > 2) {
-		exports.solve(process.argv[2], lib.display);
-	} else {
-		lib.getInputForDay(4, function(input) {
-			exports.solve(input, lib.display);
-		});
-	}
-}
+var main = lib.main(4, exports);
 
 exports.solve = function(input, display) {
 	input = input.replace('\n', '');

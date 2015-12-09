@@ -1,15 +1,7 @@
 var exports = module.exports = {};
 var lib = require('../lib.js');
 
-function main() {
-	if (process.argv.length > 2) {
-		exports.solve(process.argv[2], lib.display);
-	} else {
-		lib.getInputForDay(5, function(input) {
-			exports.solve(input, lib.display);
-		});
-	}
-}
+var main = lib.main(5, exports);
 
 exports.solve = function(input, display) {
 	var nice_words = 0, nice_words_new_criteria = 0;

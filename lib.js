@@ -28,6 +28,18 @@ var getInput = function(url, cb) {
 	req.end();
 }
 
+exports.main = function(i, day) {
+	return (function() {
+		if (process.argv.length > 2) {
+			day.solve(process.argv[2], exports.display);
+		} else {
+			exports.getInputForDay(i, function(input) {
+				day.solve(input, exports.display);
+			});
+		}
+	});
+}
+
 exports.display = function(lines) {
 	console.log(lines.join("\n"));
 }
