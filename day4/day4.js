@@ -22,7 +22,7 @@ exports.solve = function(input, display) {
 	return display([
 		'The MD5 of "' + (input + fiveZeroes) + '" starts with 5 zeroes (' + fiveZeroes + ').',
 		'The MD5 of "' + (input + sixZeroes) + '" starts with 6 zeroes (' + sixZeroes + ').'
-	])
+	]);
 }
 
 if (require.main === module) {

@@ -33,7 +33,7 @@ exports.solve = function(input, display) {
 		'But after revision, the total brightness is ' + reduceGrid(brightnessGrid, function(mem, val) {
 			return mem + val;
 		}) + '.'
-	])
+	]);
 }
 
 const onOffLambdas = {
